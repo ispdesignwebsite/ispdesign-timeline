@@ -1,0 +1,1 @@
+function LoadCount(t){var n=0,o=null,u=t,i=!1;isNaN(u)&&(u=0),this.setCallback=function(t){o=t},this.setCount=function(t){u=t},this.getCount=function(){return u},this.loaded=function(){return i},this.count=function(){n+=1,n==u&&(i=!0,o&&(BrowserDetect.TABLET?setTimeout(o,100):o()))}}

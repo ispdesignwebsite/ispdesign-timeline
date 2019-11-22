@@ -1,0 +1,1 @@
+Array.prototype.sortOn=function(){var r=this.slice();if(!arguments.length)return r.sort();var t=Array.prototype.slice.call(arguments);return r.sort(function(r,e){for(var n=t.slice(),o=n.shift();r[o]==e[o]&&n.length;)o=n.shift();return r[o]==e[o]?0:r[o]>e[o]?1:-1})};

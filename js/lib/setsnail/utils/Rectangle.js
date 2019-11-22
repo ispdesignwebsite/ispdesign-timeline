@@ -1,0 +1,1 @@
+function Rectangle(t,e,n,h){var i={};return i.x=t||0,i.y=e||0,i.width=n||0,i.height=h||0,i}

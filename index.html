@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- IE: Force to always use the latest version - if chrome frame is installed use this instead -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="initial-scale=.8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="referrer" content="always" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Timeline</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/images/icons/favicon.ico"
+    />
+
+    <!-- Meta description and keywords -->
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--		<link rel="stylesheet" type="text/css" href="assets/css/lists.css">
+ -->
+  </head>
+
+  <body>
+    <!-- Outsider Lib -->
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>-->
+    <script src="js/lib/greensock/TweenMax.js"></script>
+
+    <!-- Tools n Utils -->
+    <script src="js/lib/setsnail/system/BrowserDetect.js"></script>
+    <script src="js/lib/setsnail/debug/Debug.js"></script>
+    <script src="js/lib/setsnail/animation/AnimationUtils.js"></script>
+    <script src="js/lib/setsnail/utils/Trace.js"></script>
+    <script src="js/lib/setsnail/utils/EventDispatcher.js"></script>
+    <script src="js/lib/setsnail/utils/ColorUtils.js"></script>
+    <script src="js/lib/setsnail/utils/CSS.js"></script>
+    <script src="js/lib/setsnail/utils/Snail.js"></script>
+    <script src="js/lib/setsnail/utils/ArrayUtils.js"></script>
+    <script src="js/lib/setsnail/utils/RenderEngine.js"></script>
+    <script src="js/lib/setsnail/utils/StringUtils.js"></script>
+    <script src="js/lib/setsnail/utils/instafeed.js"></script>
+    <script src="js/lib/setsnail/utils/MapUtils.js"></script>
+    <script src="js/lib/setsnail/share/ShareUtils.js"></script>
+    <script src="js/lib/setsnail/search/SearchManager.js"></script>
+    <script src="js/lib/setsnail/text/Text.js"></script>
+    <script src="js/lib/setsnail/prototype/array/sortOn.js"></script>
+
+    <!-- TouchLib -->
+    <script src="js/lib/setsnail/touch/Touchable.js"></script>
+    <script src="js/lib/setsnail/touch/TouchDragger.js"></script>
+
+    <script src="js/lib/setsnail/touch/utils/DragGroup.js"></script>
+    <script src="js/lib/setsnail/touch/utils/DragInfo.js"></script>
+    <script src="js/lib/setsnail/touch/utils/GroupDragger.js"></script>
+    <script src="js/lib/setsnail/touch/utils/TouchInfo.js"></script>
+    <script src="js/lib/setsnail/touch/utils/EaseInfo.js"></script>
+
+    <script src="js/lib/setsnail/touch/plugins/DraggerPlugin.js"></script>
+    <script src="js/lib/setsnail/touch/plugins/DraggerEasePlugin.js"></script>
+    <script src="js/lib/setsnail/touch/plugins/DragBasic.js"></script>
+    <script src="js/lib/setsnail/touch/plugins/DragBounds.js"></script>
+    <script src="js/lib/setsnail/touch/plugins/DragEase.js"></script>
+
+    <script src="js/lib/setsnail/utils/Rectangle.js"></script>
+    <script src="js/lib/setsnail/utils/MathUtils.js"></script>
+
+    <!-- ResizeManager -->
+    <script src="js/lib/setsnail/resize/ResizeManager.js"></script>
+    <script src="js/lib/setsnail/resize/ResizeManagerSettings.js"></script>
+    <script src="js/lib/setsnail/resize/ResizeEvents.js"></script>
+
+    <script src="js/lib/setsnail/video/VideoPlayer.js"></script>
+
+    <!-- RetinaHandler -->
+    <script src="js/lib/setsnail/image/RetinaImage.js"></script>
+    <script src="js/lib/setsnail/retina/RetinaHandle.js"></script>
+    <script src="js/lib/setsnail/retina/RetinaHandleEvents.js"></script>
+
+    <!-- ContentManager -->
+    <script src="js/lib/setsnail/contentManager/ContentManager.js"></script>
+    <script src="js/lib/setsnail/contentManager/TemplateData.js"></script>
+
+    <!--
+		END SnailLib
+		-->
+
+    <!-- Src -->
+    <script src="js/src/Main.js"></script>
+    <script src="js/src/setsnail/Config.js"></script>
+    <script src="js/src/setsnail/Assets.js"></script>
+    <script src="js/src/setsnail/ui/UIColors.js"></script>
+    <script src="js/src/setsnail/utils/GuideLines.js"></script>
+    <!--<script src="js/src/setsnail/utils/LinedCircle.js"></script>-->
+    <!--<script src="js/src/setsnail/utils/RoundCircleGroup.js"></script>-->
+    <!--<script src="js/src/setsnail/utils/GroupedCircles.js"></script>-->
+    <script src="js/src/setsnail/utils/ScrollController.js"></script>
+    <script src="js/src/setsnail/utils/ImageSlider.js"></script>
+
+    <!--LINES-->
+    <script src="js/src/setsnail/utils/Lines/PsychedelicLines.js"></script>
+    <script src="js/src/setsnail/utils/Lines/LineMaskDrawer.js"></script>
+    <script src="js/src/setsnail/utils/Lines/LineMaskShape.js"></script>
+    <script src="js/src/setsnail/utils/Lines/CirclesOnALines.js"></script>
+
+    <script src="js/src/setsnail/ui/buttons/TextButton.js"></script>
+    <script src="js/src/setsnail/ui/text/TextArea.js"></script>
+
+    <!-- Templates -->
+    <script src="js/src/setsnail/templates/PageTemplate.js"></script>
+    <script src="js/src/setsnail/templates/TemplateHome.js"></script>
+    <script src="js/src/setsnail/templates/TemplateCase.js"></script>
+    <script src="js/src/setsnail/templates/TemplateCasesOverview.js"></script>
+    <script src="js/src/setsnail/templates/TemplatePrincip.js"></script>
+    <script src="js/src/setsnail/templates/TemplateProfil.js"></script>
+
+    <!-- Modules -->
+    <script src="js/src/setsnail/ui/modules/Module.js"></script>
+    <script src="js/src/setsnail/ui/modules/WhiteSpaceModule.js"></script>
+    <script src="js/src/setsnail/ui/modules/ReturnModule.js"></script>
+    <script src="js/src/setsnail/ui/modules/BasicHomeModule.js"></script>
+
+    <script src="js/src/setsnail/ui/modules/home/HomeStoryModule.js"></script>
+
+    <script src="js/src/setsnail/ui/modules/case/CaseOverviewModule.js"></script>
+    <script src="js/src/setsnail/ui/modules/case/CaseHomeModule.js"></script>
+    <script src="js/src/setsnail/ui/modules/case/CaseImageModule.js"></script>
+    <script src="js/src/setsnail/ui/modules/case/CaseVideoModule.js"></script>
+    <script src="js/src/setsnail/ui/modules/case/CaseTextModule.js"></script>
+
+    <script src="js/src/setsnail/ui/modules/casesoverview/OverviewCaseModule.js"></script>
+
+    <script src="js/src/setsnail/ui/modules/principles/PrincipleSectionModule.js"></script>
+
+    <!--<script src="js/src/setsnail/ui/modules/profile/ProfileEmployeeModule.js"></script>-->
+    <script src="js/src/setsnail/ui/modules/profile/ProfileEmployeeModuleTwo.js"></script>
+    <script src="js/src/setsnail/ui/modules/profile/ProfileInfoModule.js"></script>
+    <script src="js/src/setsnail/ui/modules/profile/ProfileEmployee.js"></script>
+
+    <!-- Components -->
+    <script src="js/src/setsnail/ui/components/Footer.js"></script>
+    <script src="js/src/setsnail/ui/components/HomeStory.js"></script>
+    <script src="js/src/setsnail/ui/components/CasesInfoBox.js"></script>
+
+    <!-- Menu -->
+    <script src="js/src/setsnail/ui/menu/MainMenu.js"></script>
+    <script src="js/src/setsnail/ui/menu/MenuBorder.js"></script>
+    <script src="js/src/setsnail/ui/menu/MenuBorderLines.js"></script>
+    <script src="js/src/setsnail/ui/menu/MenuLogo.js"></script>
+
+    <script src="js/src/setsnail/ui/menu/MenuContent.js"></script>
+    <script src="js/src/setsnail/ui/menu/MenuContactInfo.js"></script>
+    <script src="js/src/setsnail/ui/menu/MenuFooter.js"></script>
+    <script src="js/src/setsnail/ui/menu/MenuSelector.js"></script>
+    <script src="js/src/setsnail/ui/menu/MenuSocial.js"></script>
+
+    <div style="display: none;" id="content">
+      <div data-name="general-data">
+        <div data-name="menu">
+          <div data-name="contact">
+            <div data-name="headline">lorem</div>
+
+            <div data-name="columns">
+              <div data-name="column">
+                lorem ipsum<br />lorem ipsum<br />lorem ipsum<br />lorem
+                ipsum<br /><br />lorem ipsum<br />lorem ipsum<br />lorem
+                ipsum<br />
+              </div>
+              <div data-name="column">
+                lorem ipsum<br /><a href="" target="_top">lorem ipsum</a>
+              </div>
+              <div data-name="column">
+                lorem ipsum<br />lorem ipsum<br /><a href="" target="_top"
+                  >lorem ipsum</a
+                ><br /><br />
+              </div>
+            </div>
+          </div>
+
+          <div data-name="footer">
+            <div data-name="copyright"></div>
+            <div data-name="cvr"></div>
+          </div>
+
+          <div data-name="social">
+            <div data-name="facebook" data-link=""></div>
+            <div data-name="linkedin" data-link=""></div>
+            <div data-name="instagram" data-link=""></div>
+            <div data-name="twitter" data-link=""></div>
+          </div>
+        </div>
+
+        <div data-name="pagefooter">
+          <div data-name="email"><a href="" target="_top"></a></div>
+          <div data-name="phone"></div>
+        </div>
+      </div>
+
+      <div data-name="pages">
+        <div data-path="home" data-template="home">
+          <div data-name="frontpage">
+            <div data-name="founded"></div>
+            <div data-name="link" data-link="projects"></div>
+            <div data-name="body">
+              <p
+                style="font-size:15px;font-weight:500;letter-spacing:10px;color:#fff;"
+              >
+                OUR HISTORY
+              </p>
+              <p id="custom1" style="color:#fff;">
+                SHINING A LIGHT<br />AT OUR JOURNEY<br />THROUGH TIME
+              </p>
+              <p
+                style="position:absolute;font-size:14px;line-height:110%;color:#fff;"
+              >
+                From the beginning, our goal has been to pioneer technology
+                <br />
+                that revolutionizes the industry andaccelerates the transition
+                <br />into brilliant architectural lighting.
+              </p>
+            </div>
+          </div>
+          <div data-name="stories">
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2019</div>
+              <div data-name="headline">ISP LAUNCHES WITH A NEW LOOK</div>
+              <div data-name="body">
+                With over two decades in the business, ISP brings visual
+                aesthetic and branding to its new website.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">
+                  assets/images/ISPjournal/apple2019.gif
+                </div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2016</div>
+              <div data-name="headline">VILLA NERI</div>
+              <div data-name="body">
+                ISP Design and Villa Neri partner to develop a custom smart LED
+                landscape light for the residential market. The pathway lighting
+                is high quality, easy to install and durable.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">
+                  assets/images/ISPjournal/villaneri.jpg
+                </div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2015</div>
+              <div data-name="headline">MCDONALD’S</div>
+              <div data-name="body">
+                In 2015, ISP worked on McDonald's first prototype and was able
+                to bring small profile LED fixtures into the design.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">
+                  assets/images/ISPjournal/2015-mcdonalds-2.jpg
+                </div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2015</div>
+              <div data-name="headline">GOOGLE FIBER</div>
+              <div data-name="body">
+                In 2015, we worked with the Google Fiber team to launch its
+                office and retail locations across the U.S.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">assets/images/ISPjournal/2015.gif</div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2015</div>
+              <div data-name="headline">GRID</div>
+              <div data-name="body">
+                In 2015, ISP and Price Industries partnered to design a modular
+                grid system with lighting, cameras, speakers, sensors, and
+                controls.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">assets/images/ISPjournal/grid.jpg</div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2012</div>
+              <div data-name="headline">AC2 PARK</div>
+              <div data-name="body">
+                ISP Design was brought on board to work on AC2 Park. We provided
+                Apple with a full scope of services which included overseeing
+                procurement for the entire lighting and quick-connect systems.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">
+                  assets/images/ISPjournal/2013-ac2park.jpg
+                </div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2009</div>
+              <div data-name="headline">APPLE PROTOTYPE</div>
+              <div data-name="body">
+                ISP was tasked to provide a cost-effective and seamless
+                electrical solution for its retail stores worldwide.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">
+                  assets/images/ISPjournal/2009-apple.jpg
+                </div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2008</div>
+              <div data-name="headline">LITRO</div>
+              <div data-name="body">
+                In 2008, ISP worked with Eight, Inc. on creating a custom color
+                changing system that integrated with custom control which
+                reimagined the way gas stations approached lighting innovations.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">assets/images/ISPjournal/2008.gif</div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2005</div>
+              <div data-name="headline">NOKIA</div>
+              <div data-name="body">
+                From 2005-2008, ISP collaborated with Eight, Inc to create a
+                custom lighting concept for Nokia stores.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">
+                  assets/images/ISPjournal/2005-2008.gif
+                </div>
+              </div>
+            </div>
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2003</div>
+              <div data-name="headline">THE UNIVERSITY OF PUERTO RICO</div>
+              <div data-name="body">
+                <p style="width: 60%;">
+                  We were tasked with lighting a four-story building with a
+                  unique metal facade at the University of Puerto Rico. Working
+                  with T5HO lamps and their unique lumen package our design
+                  allows project on to the facade.
+                </p>
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">assets/images/ISPjournal/2003.jpg</div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">2000</div>
+              <div data-name="headline">APPLE RETAIL</div>
+              <div data-name="body">
+                ISP worked on every Apple store from 2000 to 2013 encompassing
+                470 stores worldwide.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">assets/images/ISPjournal/2000.jpg</div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">1999</div>
+              <div data-name="headline">iXL</div>
+              <div data-name="body">
+                iXL took ISP to new heights. Working with a unique space allowed
+                us to implement many different lamp sources that included: T2,
+                T8, MR16 Lamps, AR111 lamps, Cold Cathode, and Metal Halide.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">
+                  assets/images/ISPjournal/1999-ixl.jpg
+                </div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">1999</div>
+              <div data-name="headline">MAKING MOVES</div>
+              <div data-name="body">
+                ISP Design gets their first email account.
+                Ispdesign@earthlink.net
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">assets/images/ISPjournal/1999.jpg</div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">1998</div>
+              <div data-name="headline">APPLE PROTOTYPE</div>
+              <div data-name="body">
+                ISP kicks off its first retail client, Apple. We designed a
+                custom fixture for lightboxes using T5HO lamps which had just
+                been introduced in the market. The fixtures launched in 36
+                retail stores.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">
+                  assets/images/ISPjournal/1998-apple.jpg
+                </div>
+              </div>
+            </div>
+            <!-- one story end -->
+            <!-- one story begin -->
+            <div data-name="story">
+              <div data-name="date">1992</div>
+              <div data-name="headline">ISP DESIGN IS BORN</div>
+              <div data-name="body">
+                Their founders, Sylvia and Janis, started ISP Design where their
+                initial scope of services included space planning, lighting and
+                construction administration.
+              </div>
+              <div data-name="image-tag-name"></div>
+              <div data-name="images">
+                <div data-name="image">assets/images/ISPjournal/1992.jpg</div>
+              </div>
+            </div>
+            <!-- one story end -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-145760456-1", "auto");
+      ga("send", "pageview");
+    </script>
+
+    <!-- Initialize site -->
+    <script>
+      window.onload = function() {
+        document.body.style.margin = 0;
+        document.body.style.padding = 0;
+        document.body.style.color = "#1c1c1c";
+        document.body.style.fontSize = "17px";
+        document.body.style.fontStyle = "normal";
+        document.body.style.overflowX = "hidden";
+        document.body.style.width = "100%";
+        document.body.style.height = "100%";
+
+        var main = new Main();
+        document.body.appendChild(main);
+        main.init();
+      };
+    </script>
+  </body>
+</html>

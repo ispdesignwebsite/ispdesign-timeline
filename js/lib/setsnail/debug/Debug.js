@@ -1,0 +1,1 @@
+Debug={},Debug.isLocalhost=function(){var n=window.location.href;return-1!==n.indexOf("localhost")||-1!==n.indexOf("172")||-1!==n.indexOf("192")||-1!==n.indexOf("10")};

@@ -1,0 +1,1 @@
+function DraggerEasePlugin(){var n=new DraggerPlugin,e=!0;return n.EaseInfo=null,n.setEaseInfo=function(e){n.easeInfo=e},n.disableEase=function(){e=!1},n.enableEase=function(){e=!0},n.easeStarted=function(){},n.easeEnded=function(){},n.easeUpdated=function(){},n.isEaseEnabled=function(){return e},n}

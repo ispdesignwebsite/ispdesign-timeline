@@ -1,0 +1,1 @@
+function KeyboardManager(){function n(){document.onkeydown=e,document.onkeyup=t}function e(n){o.dispatchEvent(KeyboardEvents.KEY_DOWN,n)}function t(n){o.dispatchEvent(KeyboardEvents.KEY_UP,n)}var o=new EventDispatcher;return n(),o}

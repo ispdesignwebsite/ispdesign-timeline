@@ -1,0 +1,1 @@
+function WhiteSpaceModule(e,t){var n=Snail.extend(new Module),i=null!=t?t:UIColors.WHITE;n.style.backgroundColor=i;var o=null!=e?e:200;return n.getWidth=function(){return o},n.resize_desktop=function(e,t){_height=t,TweenMax.set(n,{width:n.getWidth(),height:_height})},n.setWidth=function(e){o=e},n}

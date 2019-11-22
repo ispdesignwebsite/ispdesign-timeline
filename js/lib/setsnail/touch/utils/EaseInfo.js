@@ -1,0 +1,1 @@
+function EaseInfo(){var a={easeRatio:1,linearEaseRatio:1,easeDistance:{x:0,y:0}};return a}

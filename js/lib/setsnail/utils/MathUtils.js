@@ -1,0 +1,1 @@
+MathUtils={},MathUtils.getDistancePoints=function(t,n){var i=0,r=0;return i=n.x-t.x,i*=i,r=n.y-t.y,r*=r,Math.sqrt(i+r)},MathUtils.getPointBetween=function(t,n,i){return{x:t.x+i*(n.x-t.x),y:t.y+i*(n.y-t.y)}},MathUtils.ratioFromRatio=function(t,n,i,r){var a=1/(n-t),e=a*i;return e-=t*a,r&&(e>1?e=1:e<0&&(e=0)),e};

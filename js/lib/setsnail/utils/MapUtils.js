@@ -1,0 +1,1 @@
+MapUtils={},MapUtils.fromCoordinatesToPixel=function(a,t,M,h,n){var o=n/360,i=n/(2*Math.PI),r=Math.round(M+a*o),l=Math.min(Math.max(Math.sin(t*(Math.PI/180)),-.9999),.9999),s=Math.round(h+.5*Math.log((1+l)/(1-l))*-i);return{x:r,y:s}};

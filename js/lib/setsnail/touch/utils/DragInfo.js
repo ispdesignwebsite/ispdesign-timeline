@@ -1,0 +1,1 @@
+function DragInfo(t,i){var s={dist:{x:0,y:0},lastDist:{x:0,y:0},lastPos:{x:0,y:0},newPos:{x:0,y:0},lockX:!1,lockY:!1,init:function(t,i){s.lockX=t,s.lockY=i},updateLastDist:function(){s.lastDist.x=s.dist.x,s.lastDist.y=s.dist.y}};return s.init(t,i),s}
